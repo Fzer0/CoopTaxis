@@ -1,6 +1,5 @@
 // src/components/Header.js
 import React, { useState, useEffect } from 'react';
-import { Phone } from 'lucide-react';
 import { cooperativaData } from '../data/data';
 import { Home } from 'lucide-react';
 

@@ -1,10 +1,13 @@
 // src/components/DriverCard.js
 import React from 'react';
-import { Shield, MapPin } from 'lucide-react';
+// CORRECCIÓN: Se importan DriverIcon y Shield.
+import { DriverIcon, Shield } from 'lucide-react'; 
 import { cooperativaData } from '../data/data';
 
 const DriverCard = ({ driver }) => {
     const data = cooperativaData;
+    
+    // NOTA: 'MapPin' ya no está, resolviendo la advertencia original.
     
     // El estilo inline para cargar la imagen de fondo de la tarjeta
     const imageStyle = {
@@ -60,6 +63,7 @@ const DriverCard = ({ driver }) => {
                     color: data.colors.primary, 
                     fontSize: '0.9em' 
                 }}>
+                    {/* Se usa el componente Shield (ahora importado) */}
                     <Shield size={18} style={{ marginRight: '8px' }} />
                     <span style={{ fontWeight: 'bold' }}>Verificado</span>
                 </div>

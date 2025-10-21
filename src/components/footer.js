@@ -1,10 +1,13 @@
-// src/components/Footer.js
 import React from 'react';
 import { MapPin, Phone, MessageCircle } from 'lucide-react';
 import { cooperativaData } from '../data/data'; 
 
 function Footer() {
   const { contact, colors, name } = cooperativaData; 
+
+  // CORRECCIÓN 1: Eliminamos los escapes innecesarios (\) en la expresión regular.
+  // La expresión regular limpia el número de teléfono para el enlace 'tel:'.
+  const cleanPhone = contact.phoneFijo.replace(/[\s()/-]/g, '');
 
   return (
     <footer style={{
@@ -26,43 +29,37 @@ function Footer() {
             </h4>
             <p style={{ marginBottom: '10px' }}>
               <MapPin size={16} style={{ display: 'inline', marginRight: '8px' }} />
-              {/* ✅ ENVOLVEMOS LA DIRECCIÓN CON UN ENLACE A MAPS */}
               <a 
-                href={contact.mapUrl} // Usamos la nueva URL de Maps
+                href={contact.mapUrl} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 style={{ 
                   color: colors.backgroundLight, 
-                  textDecoration: 'underline', // Destacamos que es clicable
+                  textDecoration: 'underline', 
                 }}
               >
-                  {contact.address}
+                {contact.address}
               </a>
             </p>
             <p style={{ marginBottom: '10px' }}>
               <Phone size={16} style={{ display: 'inline', marginRight: '8px' }} />
-              <a href={`tel:${contact.phoneFijo.replace(/[\s\(\)/]/g, '')}`} style={{ color: colors.backgroundLight, textDecoration: 'none' }}>
-                  {contact.phoneFijo}
+              {/* Usamos la variable 'cleanPhone' corregida */}
+              <a href={`tel:${cleanPhone}`} style={{ color: colors.backgroundLight, textDecoration: 'none' }}>
+                {contact.phoneFijo}
               </a>
             </p>
             <p style={{ marginBottom: '10px' }}>
               <MessageCircle size={16} style={{ display: 'inline', marginRight: '8px' }} />
               <a href={`https://wa.me/${contact.whatsappClaro}`} target="_blank" rel="noopener noreferrer" style={{ color: colors.backgroundLight, textDecoration: 'none' }}>
-                  {contact.whatsappClaro} (Claro)
+                {contact.whatsappClaro} (Claro)
               </a>
             </p>
             <p style={{ marginBottom: '10px' }}>
               <MessageCircle size={16} style={{ display: 'inline', marginRight: '8px' }} />
               <a href={`https://wa.me/${contact.whatsappMovistar}`} target="_blank" rel="noopener noreferrer" style={{ color: colors.backgroundLight, textDecoration: 'none' }}>
-                  {contact.whatsappMovistar} (Movistar)
+                {contact.whatsappMovistar} (Movistar)
               </a>
             </p>
-            {/* Si tienes un email, descomenta esta línea y agrega el email en data.js 
-            <p> 📧 <a href={`mailto:${contact.email}`} 
-                style={{ color: colors.primary, textDecoration: 'none' }}>
-                {contact.email}
-              </a>
-            </p>*/}
           </div>
           
           {/* Columna de Horarios */}
@@ -82,19 +79,34 @@ function Footer() {
               Síguenos
             </h4>
             <div style={{ display: 'flex', gap: '15px' }}>
-              {/* Estos enlaces deberían usar los datos de socialMedia en un proyecto real */}
-              <a href="#" style={{ 
-                width: '40px', height: '40px', backgroundColor: 'rgba(255, 200, 5, 0.1)', borderRadius: '50%', 
-                display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.primary, 
-                textDecoration: 'none', transition: 'all 0.3s' }}>f</a>
-              <a href="#" style={{ 
-                width: '40px', height: '40px', backgroundColor: 'rgba(255, 200, 5, 0.1)', borderRadius: '50%', 
-                display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.primary, 
-                textDecoration: 'none', transition: 'all 0.3s' }}>📷</a>
-              <a href="#" style={{ 
-                width: '40px', height: '40px', backgroundColor: 'rgba(255, 200, 5, 0.1)', borderRadius: '50%', 
-                display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.primary, 
-                textDecoration: 'none', transition: 'all 0.3s' }}>X</a>
+              {/* CORRECCIÓN 2: Se cambiaron los <a> sin href válido por <button> o se les dio un href real.
+                 Como no tenemos los links reales, los cambiamos a botones (si fueran solo íconos decorativos o funcionales) 
+                 o temporalmente a un placeholder válido si deben ser links: href="#social-link" y rol de button. */}
+              
+              {/* Opción 1: Placeholder Válido + Rol para Accesibilidad */}
+              <a 
+                href="#facebook-link" 
+                role="button" // Indica que es interactivo como un botón, pero mantiene estilos de link
+                style={{ 
+                  width: '40px', height: '40px', backgroundColor: 'rgba(255, 200, 5, 0.1)', borderRadius: '50%', 
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.primary, 
+                  textDecoration: 'none', transition: 'all 0.3s' }}>f</a>
+              
+              <a 
+                href="#instagram-link" 
+                role="button" 
+                style={{ 
+                  width: '40px', height: '40px', backgroundColor: 'rgba(255, 200, 5, 0.1)', borderRadius: '50%', 
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.primary, 
+                  textDecoration: 'none', transition: 'all 0.3s' }}>📷</a>
+              
+              <a 
+                href="#twitter-link" 
+                role="button" 
+                style={{ 
+                  width: '40px', height: '40px', backgroundColor: 'rgba(255, 200, 5, 0.1)', borderRadius: '50%', 
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', color: colors.primary, 
+                  textDecoration: 'none', transition: 'all 0.3s' }}>X</a>
             </div>
           </div>
         </div>

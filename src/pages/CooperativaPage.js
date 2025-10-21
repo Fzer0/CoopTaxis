@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageCircle, Clock, Shield, Star, MapPin, TrendingUp,ShieldCheck, Users, Award, ChevronRight, Plane } from 'lucide-react';
+import { Phone, MessageCircle, Clock, Shield, MapPin, TrendingUp, Users, Award, ChevronRight, } from 'lucide-react';
 
 // Importa los datos
 import { cooperativaData } from '../data/data'; 
