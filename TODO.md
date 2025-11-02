@@ -8,3 +8,4 @@
 - [x] Revertir cambios para mantener el diseño original del usuario
 - [x] Restaurar secciones a su estado original con estilos inline
 - [x] Volver al diseño principal original del usuario
+- [x] Actualizar comentarios de secciones con numeración

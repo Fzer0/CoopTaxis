@@ -299,6 +299,10 @@
         padding: 20px;
     }
 
+    .hero-content {
+        padding: 0 10px;
+    }
+
     .hero-title {
         font-size: 2.5em; /* Título más pequeño */
     }
@@ -318,15 +322,22 @@
     }
 
     /* Stats grid móvil */
+    .stats-section {
+        padding: 40px 5%;
+    }
+
     .stats-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 20px;
-        padding: 40px 5%;
     }
 
     /* Services móvil */
     .services-section {
         padding: 60px 5%;
+    }
+
+    .services-content {
+        padding: 0 10px;
     }
 
     .services-title {
@@ -345,6 +356,10 @@
     /* Mission/Vision móvil */
     .mission-vision-section {
         padding: 60px 5%;
+    }
+
+    .mission-vision-content {
+        padding: 0 10px;
     }
 
     .pilares-title {
@@ -379,6 +394,10 @@
         padding: 60px 5%;
     }
 
+    .drivers-content {
+        padding: 0 10px;
+    }
+
     .drivers-title {
         font-size: 2.5em;
     }
@@ -395,6 +414,10 @@
     /* CTA móvil */
     .cta-section {
         padding: 60px 5%;
+    }
+
+    .cta-content {
+        padding: 0 10px;
     }
 
     .cta-title {
@@ -427,7 +450,7 @@
         font-size: 2em;
     }
 
-    .hero-text {
+    .certified-badge {
         font-size: 0.9em;
         padding: 8px 15px;
     }
