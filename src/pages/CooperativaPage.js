@@ -28,82 +28,20 @@ const CooperativaPage = () => {
             <Header />
             <main>
                 {/* Sección Hero: Presentación principal con imagen de fondo y llamada a acción */}
-                <section style={{
-                    position: 'relative',
-                    height: '100vh',
-                    backgroundImage: `url(${heroImageUrl})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#ffffff'
-                }}>
-                    <div style={{
-                        position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        zIndex: 1
-                    }} />
-                    <div style={{
-                        maxWidth: '1200px',
-                        margin: '0 auto',
-                        padding: '0 20px',
-                        textAlign: 'center',
-                        position: 'relative',
-                        zIndex: 2
-                    }}>
-                        <div style={{
-                            backgroundColor: data.colors.primary,
-                            color: data.colors.backgroundDark,
-                            padding: '10px 20px',
-                            borderRadius: '25px',
-                            display: 'inline-block',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            fontSize: '1.1em'
-                        }}>
+                <section className="hero-section">
+                    <div className="hero-overlay" />
+                    <div className="hero-content">
+                        <div className="certified-badge">
                             ✓ Servicio Certificado y Regulado
                         </div>
-                        <h1 style={{
-                            fontSize: '4em',
-                            marginBottom: '20px',
-                            fontWeight: 'bold',
-                            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
-                        }}>
-                            Transporte <span style={{ color: data.colors.primary }}>Seguro</span> y <span style={{ color: data.colors.primary }}>Confiable</span>
+                        <h1 className="hero-title">
+                            Transporte <span>Seguro</span> y <span>Confiable</span>
                         </h1>
-                        <p style={{
-                            fontSize: '1.5em',
-                            marginBottom: '40px',
-                            maxWidth: '600px',
-                            margin: '0 auto 40px',
-                            lineHeight: '1.4'
-                        }}>
+                        <p className="hero-description">
                             Tu viaje, nuestra misión. Servicio 24 horas. ¡Seguridad y confianza en cada kilómetro!
                         </p>
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            gap: '20px',
-                            flexWrap: 'wrap'
-                        }}>
-                            <div style={{
-                                backgroundColor: data.colors.primary,
-                                color: data.colors.backgroundDark,
-                                padding: '15px 30px',
-                                borderRadius: '10px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '10px',
-                                fontWeight: 'bold',
-                                cursor: 'pointer',
-                                transition: 'transform 0.3s',
-                                fontSize: '1.1em'
-                            }}>
+                        <div className="hero-buttons">
+                            <div className="phone-button">
                                 <Phone size={24} />
                                 Llámanos: (02) 2352 880 / 2353 561
                             </div>
