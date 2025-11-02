@@ -2,13 +2,14 @@ import React from 'react';
 import { Phone, MessageCircle, Clock, Shield, MapPin, TrendingUp, Users, Award, ChevronRight, } from 'lucide-react';
 
 // Importa los datos
-import { cooperativaData } from '../data/data'; 
+import { cooperativaData } from '../data/data';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import CTAButton from '../components/CTAButton';
 import StatCard from '../components/StatCard';
 import ServiceCard from '../components/ServiceCard';
 import DriverCard from '../components/DriverCard';
+import './CooperativaPage.css'; // Importar estilos CSS para responsive
 
 
 const CooperativaPage = () => {

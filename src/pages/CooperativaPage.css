@@ -1,0 +1,434 @@
+/* Estilos principales para CooperativaPage */
+
+/* Sección Hero */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('../assets/imagen/principal.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    background-color: #ff6b35;
+    color: #1a1a1a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.hero-title {
+    font-size: 4em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title span {
+    color: #ff6b35;
+}
+
+.hero-description {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.4;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.phone-button {
+    background-color: #ff6b35;
+    color: #1a1a1a;
+    padding: 15px 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s;
+    font-size: 1.1em;
+}
+
+/* Sección Estadísticas */
+.stats-section {
+    background-color: #1a1a1a;
+    padding: 60px 5%;
+    border-top: 3px solid #ff6b35;
+}
+
+.stats-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+/* Sección Servicios */
+.services-section {
+    padding: 100px 5%;
+    background-color: #ffffff;
+}
+
+.services-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-title {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+.services-description {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Sección Misión y Visión */
+.mission-vision-section {
+    padding: 100px 5%;
+    background-color: #1a1a1a;
+    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+}
+
+.mission-vision-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pilares-title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #ff6b35;
+    font-weight: bold;
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.mission-card,
+.vision-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 15px;
+    border-left: 5px solid #ff6b35;
+}
+
+.mission-title,
+.vision-title {
+    font-size: 2em;
+    color: #ff6b35;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.mission-text,
+.vision-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #ffffff;
+}
+
+.objectives-container {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 40px;
+    border-radius: 15px;
+    border-top: 5px solid #ff6b35;
+}
+
+.objectives-title {
+    font-size: 2em;
+    color: #ff6b35;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.objectives-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.1em;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.objective-icon {
+    margin-right: 10px;
+    margin-top: 3px;
+}
+
+/* Sección Conductores */
+.drivers-section {
+    padding: 100px 5%;
+    background-color: #ffffff;
+}
+
+.drivers-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.drivers-title {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+.drivers-description {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 60px;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.drivers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Sección CTA */
+.cta-section {
+    padding: 80px 5%;
+    background-color: #ff6b35;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 3em;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.cta-description {
+    font-size: 1.2em;
+    color: #1a1a1a;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.cta-image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    margin-top: 20px;
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+}
+
+.cta-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+    /* Hero section móvil */
+    .hero-section {
+        height: 80vh; /* Altura reducida en móvil */
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5em; /* Título más pequeño */
+    }
+
+    .hero-description {
+        font-size: 1.2em;
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Botones en columna */
+        gap: 15px;
+    }
+
+    .phone-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    /* Stats grid móvil */
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        padding: 40px 5%;
+    }
+
+    /* Services móvil */
+    .services-section {
+        padding: 60px 5%;
+    }
+
+    .services-title {
+        font-size: 2.5em;
+    }
+
+    .services-description {
+        font-size: 1.1em;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 20px;
+    }
+
+    /* Mission/Vision móvil */
+    .mission-vision-section {
+        padding: 60px 5%;
+    }
+
+    .pilares-title {
+        font-size: 2.5em;
+    }
+
+    .mission-vision-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 30px;
+    }
+
+    .mission-card,
+    .vision-card {
+        padding: 30px;
+    }
+
+    .mission-title,
+    .vision-title {
+        font-size: 1.8em;
+    }
+
+    .objectives-container {
+        padding: 30px;
+    }
+
+    .objectives-title {
+        font-size: 1.8em;
+    }
+
+    /* Drivers móvil */
+    .drivers-section {
+        padding: 60px 5%;
+    }
+
+    .drivers-title {
+        font-size: 2.5em;
+    }
+
+    .drivers-description {
+        font-size: 1.1em;
+    }
+
+    .drivers-grid {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+        gap: 20px;
+    }
+
+    /* CTA móvil */
+    .cta-section {
+        padding: 60px 5%;
+    }
+
+    .cta-title {
+        font-size: 2.5em;
+    }
+
+    .cta-description {
+        font-size: 1.1em;
+    }
+
+    .cta-image-container {
+        margin: 20px 0 0 0;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .hero-title {
+        font-size: 2em;
+    }
+
+    .hero-description {
+        font-size: 1em;
+    }
+
+    .services-title,
+    .pilares-title,
+    .drivers-title,
+    .cta-title {
+        font-size: 2em;
+    }
+
+    .hero-text {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+}
