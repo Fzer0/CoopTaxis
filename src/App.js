@@ -1,6 +1,6 @@
 import React from 'react';
 import CooperativaPage from './pages/CooperativaPage'; 
-import './App.css'; 
+import './App.css'; // Mantiene la importación
 
 function App() {
   return (

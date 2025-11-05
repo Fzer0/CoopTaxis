@@ -1,23 +1,31 @@
+// src/pages/CooperativaPage.js
 import React from 'react';
-import { Phone, MessageCircle, Clock, Shield, MapPin, TrendingUp, Users, Award, ChevronRight, } from 'lucide-react';
+import { 
+  Phone, MessageCircle, Clock, Shield, MapPin, TrendingUp, Users, Award, ChevronRight 
+} from 'lucide-react';
 
-// Importa los datos
+// Importa el CSS que crearemos
+import './CooperativaPage.css'; 
+
+// Importa los componentes y datos
 import { cooperativaData } from '../data/data';
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from '../components/Header'; // Asumo Header.js
+import Footer from '../components/Footer'; // Asumo Footer.js
 import CTAButton from '../components/CTAButton';
 import StatCard from '../components/StatCard';
 import ServiceCard from '../components/ServiceCard';
 import DriverCard from '../components/DriverCard';
-import './CooperativaPage.css'; // Importar estilos CSS para responsive
 
 
 const CooperativaPage = () => {
     const data = cooperativaData;
-
+    
     // URL de la imagen de fondo (Cámbiala a tu ruta local si la importas)
     const heroImageUrl = "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600";
     
+    // Limpiar el teléfono fijo para el enlace 'tel:'
+    const cleanPhone = data.contact.phoneFijo.replace(/[\s()/-]/g, '');
+
     return (
         <div className="cooperativa-page" style={{
             '--primary': data.colors.primary,
@@ -27,8 +35,10 @@ const CooperativaPage = () => {
         }}>
             <Header />
             <main>
-                {/* Sección Hero: Presentación principal con imagen de fondo y llamada a acción */}
-                <section className="hero-section">
+                {/* 1. Sección Hero */}
+                <section className="hero-section" style={{ 
+                    backgroundImage: `url(${heroImageUrl})` 
+                }}>
                     <div className="hero-overlay" />
                     <div className="hero-content">
                         <div className="certified-badge">
@@ -38,25 +48,27 @@ const CooperativaPage = () => {
                             Transporte <span>Seguro</span> y <span>Confiable</span>
                         </h1>
                         <p className="hero-description">
-                            Tu viaje, nuestra misión. Servicio 24 horas. ¡Seguridad y confianza en cada kilómetro!
+                            {data.slogan}
                         </p>
                         <div className="hero-buttons">
-                            <div className="phone-button">
+                            <a 
+                                href={`tel:${cleanPhone}`} 
+                                className="phone-button"
+                            >
                                 <Phone size={24} />
-                                Llámanos: (02) 2352 880 / 2353 561
-                            </div>
+                                Llámanos: {data.contact.phoneFijo}
+                            </a>
 
-                            {/* WhatsApp Claro */}
+                            {/* CTA Buttons */}
                             <CTAButton
                                 text="WhatsApp Claro"
                                 icon={MessageCircle}
                                 href={`https://wa.me/${data.contact.whatsappClaro}`}
                                 large
+                                primary
                                 target="_blank"
                                 rel="noopener noreferrer"
                             />
-
-                            {/* WhatsApp Movistar */}
                             <CTAButton
                                 text="WhatsApp Movistar"
                                 icon={MessageCircle}
@@ -69,16 +81,9 @@ const CooperativaPage = () => {
                     </div>
                 </section>
 
-                {/* SECCIÓN 2: ESTADÍSTICAS */}
-                <section style={{
-                    backgroundColor: data.colors.backgroundDark,
-                    padding: '60px 5%',
-                    borderTop: `3px solid ${data.colors.primary}`
-                }}>
-                    <div style={{
-                        maxWidth: '1400px', margin: '0 auto', display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '40px'
-                    }}>
+                {/* 2. SECCIÓN: ESTADÍSTICAS */}
+                <section className="stats-section">
+                    <div className="stats-grid container">
                         <StatCard number="24/7" label="Disponibilidad" icon={Clock} />
                         <StatCard number="50+" label="Viajes Diarios" icon={TrendingUp} />
                         <StatCard number="100%" label="Certificados" icon={Award} />
@@ -86,120 +91,57 @@ const CooperativaPage = () => {
                     </div>
                 </section>
 
-                {/* SECCIÓN 3: SERVICIOS */}
-                <section style={{ padding: '100px 5%', backgroundColor: data.colors.backgroundLight }}>
-                    <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
-                        <h2 style={{
-                            fontSize: '3em', marginBottom: '15px', color: data.colors.backgroundDark, fontWeight: 'bold'
-                        }}>
-                            Nuestros Servicios
-                        </h2>
-                        <p style={{
-                            fontSize: '1.2em', color: data.colors.greyMedium, marginBottom: '60px',
-                            maxWidth: '700px', margin: '0 auto 60px'
-                        }}>
-                            Ofrecemos soluciones de transporte adaptadas a tus necesidades
-                        </p>
-                        <div style={{
-                            display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px'
-                        }}>
-                            <ServiceCard title="Servicio Urbano"
-                                description="Transporte dentro de la ciudad, puerta a puerta. Disponible las 24 horas del día."
-                                icon={MapPin} index={0} />
-                            <ServiceCard title="Mensajería Express"
-                                description="Entrega de paquetes y encomiendas con seguro incluido."
-                                icon={Shield} index={2} />
-                            <ServiceCard title="Rutas Seguras"
-                                description="Viaja a cualquier parte con conductores certificados"
-                                icon={Award} index={4} />
+                {/* 3. SECCIÓN: SERVICIOS */}
+                <section className="services-section">
+                    <div className="services-container container">
+                        <h2 className="section-title">Nuestros Servicios</h2>
+                        <p className="section-subtitle">Ofrecemos soluciones de transporte adaptadas a tus necesidades</p>
+                        <div className="services-grid">
+                            <ServiceCard title="Servicio Urbano" description="Transporte dentro de la ciudad, puerta a puerta. Disponible las 24 horas del día." icon={MapPin} index={0} />
+                            <ServiceCard title="Mensajería Express" description="Entrega de paquetes y encomiendas con seguro incluido." icon={Shield} index={2} />
+                            <ServiceCard title="Rutas Seguras" description="Viaja a cualquier parte con conductores certificados" icon={Award} index={4} />
                         </div>
                     </div>
                 </section>
 
-                {/* SECCIÓN 4: MISIÓN Y VISIÓN */}
-                <section style={{
-                    padding: '100px 5%', backgroundColor: data.colors.backgroundDark,
-                    background: `linear-gradient(135deg, ${data.colors.backgroundDark} 0%, #1a1a1a 100%)`
-                }}>
-                    <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                        <h2 style={{
-                            fontSize: '3em', textAlign: 'center', marginBottom: '60px', color: data.colors.primary, fontWeight: 'bold'
-                        }}>
-                            Nuestros Pilares
-                        </h2>
+                {/* 4. SECCIÓN: MISIÓN Y VISIÓN */}
+                <section className="mission-vision-section">
+                    <div className="container">
+                        <h2 className="mv-title section-title">Nuestros Pilares</h2>
 
-                        {/* Contenedor de Misión y Visión */}
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '50px', marginBottom: '60px' }}>
-                            <div style={{
-                                backgroundColor: 'rgba(255, 255, 255, 0.05)', padding: '40px', borderRadius: '15px',
-                                borderLeft: `5px solid ${data.colors.primary}`
-                            }}>
-                                <h3 style={{ fontSize: '2em', color: data.colors.primary, marginBottom: '20px', fontWeight: 'bold' }}>Misión</h3>
-                                <p style={{ fontSize: '1.1em', lineHeight: '1.8', color: data.colors.backgroundLight }}>{data.identity.mision}</p>
+                        {/* Misión y Visión */}
+                        <div className="mv-grid">
+                            <div className="mv-card">
+                                <h3>Misión</h3>
+                                <p>{data.identity.mision}</p>
                             </div>
-                            <div style={{
-                                backgroundColor: 'rgba(255, 255, 255, 0.05)', padding: '40px', borderRadius: '15px',
-                                borderLeft: `5px solid ${data.colors.primary}`
-                            }}>
-                                <h3 style={{ fontSize: '2em', color: data.colors.primary, marginBottom: '20px', fontWeight: 'bold' }}>Visión</h3>
-                                <p style={{ fontSize: '1.1em', lineHeight: '1.8', color: data.colors.backgroundLight }}>{data.identity.vision}</p>
+                            <div className="mv-card">
+                                <h3>Visión</h3>
+                                <p>{data.identity.vision}</p>
                             </div>
                         </div>
 
-                        {/* Contenedor de Objetivos (NUEVA SECCIÓN) */}
-                        <div style={{
-                            backgroundColor: 'rgba(255, 255, 255, 0.08)', // Fondo ligeramente más claro
-                            padding: '40px',
-                            borderRadius: '15px',
-                            borderTop: `5px solid ${data.colors.primary}`
-                        }}>
-                            <h3 style={{ fontSize: '2em', color: data.colors.primary, marginBottom: '30px', fontWeight: 'bold', textAlign: 'center' }}>
-                                Objetivos Estratégicos
-                            </h3>
-                            <ul style={{
-                                listStyle: 'none',
-                                padding: 0,
-                                display: 'grid',
-                                gridTemplateColumns: '1fr',
-                                gap: '15px'
-                            }}>
+                        {/* Objetivos */}
+                        <div className="objectives-container">
+                            <h3 className="section-subtitle">Objetivos Estratégicos</h3>
+                            <ul className="objective-list">
                                 {data.identity.objetivos.map((objetivo, index) => (
-                                    <li key={index} style={{
-                                        display: 'flex',
-                                        alignItems: 'flex-start',
-                                        fontSize: '1.1em',
-                                        color: data.colors.backgroundLight,
-                                        lineHeight: '1.6'
-                                    }}>
+                                    <li key={index} className="objective-item">
                                         <ChevronRight size={20} color={data.colors.primary} style={{ marginRight: '10px', marginTop: '3px' }} />
                                         {objetivo}
                                     </li>
                                 ))}
                             </ul>
                         </div>
-
                     </div>
                 </section>
 
-                {/* SECCIÓN 5: CONDUCTORES Y FLOTA */}
-                <section style={{ padding: '100px 5%', backgroundColor: data.colors.backgroundLight }}>
-                    <div style={{ maxWidth: '1400px', margin: '0 auto', textAlign: 'center' }}>
-                        <h2 style={{
-                            fontSize: '3em', marginBottom: '15px', color: data.colors.backgroundDark, fontWeight: 'bold'
-                        }}>
-                            {data.driverInfo.title}
-                        </h2>
-                        <p style={{
-                            fontSize: '1.2em', color: data.colors.greyMedium, marginBottom: '60px',
-                            maxWidth: '700px', margin: '0 auto 60px'
-                        }}>
-                            {data.driverInfo.subtitle}
-                        </p>
-                        <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // Rejilla adaptable
-                            gap: '30px'
-                        }}>
+                {/* 5. SECCIÓN: CONDUCTORES Y FLOTA */}
+                <section className="services-section">
+                    <div className="services-container container">
+                        <h2 className="section-title">{data.driverInfo.title}</h2>
+                        <p className="section-subtitle">{data.driverInfo.subtitle}</p>
+                        <div className="services-grid">
                             {/* Mapea los datos de los conductores */}
                             {data.driverInfo.drivers.map((driver, index) => (
                                 <DriverCard key={index} driver={driver} />
@@ -208,37 +150,17 @@ const CooperativaPage = () => {
                     </div>
                 </section>
                 
-                {/* SECCIÓN 6: CTA FINAL */}
-                <section style={{ padding: '80px 5%', backgroundColor: data.colors.primary, textAlign: 'center' }}>
-                    <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                        <h2 style={{
-                            fontSize: '3em', color: data.colors.backgroundDark, marginBottom: '10px', fontWeight: 'bold'
-                        }}>
-                            ¿Listo para tu próximo viaje?
-                        </h2>
-                        <p style={{
-                            fontSize: '1.2em', color: data.colors.backgroundDark, marginBottom: '40px', fontWeight: '500'
-                        }}>
-                            Contáctanos ahora y reserva tu taxi en segundos:
-                        </p>
+                {/* 6. SECCIÓN: CTA FINAL */}
+                <section className="cta-section">
+                    <div className="container">
+                        <h2 className="cta-title">¿Listo para tu próximo viaje?</h2>
+                        <p className="cta-subtitle">Contáctanos ahora y reserva tu taxi en segundos:</p>
 
-                        {/* IMAGEN DE LA FLOTA Y CONDUCTORES */}
-                        <div style={{
-                            borderRadius: '15px',
-                            overflow: 'hidden',
-                            boxShadow: '0 10px 25px rgba(0, 0, 0, 0.4)',
-                            marginTop: '20px', // Espacio después de los botones
-                            maxWidth: '900px',
-                            margin: '20px auto 0 auto' // Centrar la imagen
-                        }}>
+                        {/* Contenedor para la imagen */}
+                        <div className="cta-image-container">
                             <img
-                                src={data.photos.find(p => p.name === 'Equipo').url} // Usaremos el nombre 'Equipo'
+                                src={data.photos.find(p => p.name === 'Equipo').url}
                                 alt="Equipo de la Cooperativa Manuel Córdova Galarza"
-                                style={{
-                                    width: '100%',
-                                    height: 'auto',
-                                    display: 'block'
-                                }}
                             />
                         </div>
                     </div>

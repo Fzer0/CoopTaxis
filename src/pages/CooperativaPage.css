@@ -1,16 +1,52 @@
-/* Estilos principales para CooperativaPage */
+/* src/pages/CooperativaPage.css */
 
-/* Sección Hero */
+/* --- Variables (Definidas en JSX para dinamismo, pero se pueden usar aquí) --- */
+/*
+:root {
+    --primary: #FFCC00; 
+    --background-light: #f4f4f4;
+    --background-dark: #1e1e1e;
+    --grey-medium: #666;
+}
+*/
+
+/* --- Estilos Base Globales --- */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section-title {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: var(--background-dark);
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    color: var(--grey-medium);
+    margin: 0 auto 60px;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* --- 1. HERO SECTION --- */
 .hero-section {
     position: relative;
     height: 100vh;
-    background-image: url('../assets/imagen/principal.jpeg');
-    background-size: cover;
-    background-position: center;
+    min-height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    padding: 0 5%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--background-light);
+    overflow: hidden;
 }
 
 .hero-overlay {
@@ -19,110 +55,86 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1;
 }
 
 .hero-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
     position: relative;
     z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.hero-text {
-    background-color: #ff6b35;
-    color: #1a1a1a;
-    padding: 10px 20px;
-    border-radius: 25px;
+.certified-badge {
     display: inline-block;
-    margin-bottom: 20px;
+    background-color: var(--primary);
+    color: var(--background-dark);
+    padding: 8px 20px;
+    border-radius: 50px;
     font-weight: bold;
-    font-size: 1.1em;
+    margin-bottom: 20px;
+    font-size: 0.9em;
 }
 
 .hero-title {
-    font-size: 4em;
+    font-size: 4.5em;
     margin-bottom: 20px;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: bolder;
+    line-height: 1.1;
 }
 
 .hero-title span {
-    color: #ff6b35;
+    color: var(--primary);
 }
 
 .hero-description {
     font-size: 1.5em;
+    color: var(--background-light);
     margin-bottom: 40px;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    line-height: 1.4;
+    font-weight: 300;
 }
 
 .hero-buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .phone-button {
-    background-color: #ff6b35;
-    color: #1a1a1a;
-    padding: 15px 30px;
-    border-radius: 10px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 10px;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--background-light);
+    border: 2px solid var(--background-light);
+    border-radius: 50px;
     font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s;
-    font-size: 1.1em;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Asegura que el enlace no tenga subrayado */
 }
 
-/* Sección Estadísticas */
+/* --- 2. STATS SECTION --- */
 .stats-section {
-    background-color: #1a1a1a;
+    background-color: var(--background-dark);
     padding: 60px 5%;
-    border-top: 3px solid #ff6b35;
+    border-top: 3px solid var(--primary);
 }
 
 .stats-grid {
-    max-width: 1400px;
-    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
 }
 
-/* Sección Servicios */
+
+/* --- 3. SERVICES SECTION & 5. DRIVERS SECTION --- */
 .services-section {
     padding: 100px 5%;
-    background-color: #ffffff;
-}
-
-.services-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.services-title {
-    font-size: 3em;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-    font-weight: bold;
-}
-
-.services-description {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 60px;
-    max-width: 700px;
-    margin: 0 auto 60px;
+    background-color: var(--background-light);
 }
 
 .services-grid {
@@ -131,72 +143,52 @@
     gap: 30px;
 }
 
-/* Sección Misión y Visión */
+/* --- 4. MISSION & VISION SECTION --- */
 .mission-vision-section {
     padding: 100px 5%;
-    background-color: #1a1a1a;
-    background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+    background: linear-gradient(135deg, var(--background-dark) 0%, #1a1a1a 100%);
+    color: var(--background-light);
 }
 
-.mission-vision-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.pilares-title {
-    font-size: 3em;
-    text-align: center;
+.mv-title {
+    color: var(--primary);
     margin-bottom: 60px;
-    color: #ff6b35;
-    font-weight: bold;
 }
 
-.mission-vision-grid {
+.mv-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 50px;
     margin-bottom: 60px;
 }
 
-.mission-card,
-.vision-card {
+.mv-card {
     background-color: rgba(255, 255, 255, 0.05);
     padding: 40px;
     border-radius: 15px;
-    border-left: 5px solid #ff6b35;
+    border-left: 5px solid var(--primary);
 }
 
-.mission-title,
-.vision-title {
+.mv-card h3 {
     font-size: 2em;
-    color: #ff6b35;
+    color: var(--primary);
     margin-bottom: 20px;
     font-weight: bold;
 }
 
-.mission-text,
-.vision-text {
+.mv-card p {
     font-size: 1.1em;
     line-height: 1.8;
-    color: #ffffff;
 }
 
 .objectives-container {
     background-color: rgba(255, 255, 255, 0.08);
     padding: 40px;
     border-radius: 15px;
-    border-top: 5px solid #ff6b35;
+    border-top: 5px solid var(--primary);
 }
 
-.objectives-title {
-    font-size: 2em;
-    color: #ff6b35;
-    margin-bottom: 30px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.objectives-list {
+.objective-list {
     list-style: none;
     padding: 0;
     display: grid;
@@ -208,70 +200,26 @@
     display: flex;
     align-items: flex-start;
     font-size: 1.1em;
-    color: #ffffff;
     line-height: 1.6;
 }
 
-.objective-icon {
-    margin-right: 10px;
-    margin-top: 3px;
-}
-
-/* Sección Conductores */
-.drivers-section {
-    padding: 100px 5%;
-    background-color: #ffffff;
-}
-
-.drivers-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.drivers-title {
-    font-size: 3em;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-    font-weight: bold;
-}
-
-.drivers-description {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 60px;
-    max-width: 700px;
-    margin: 0 auto 60px;
-}
-
-.drivers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-/* Sección CTA */
+/* --- 6. CTA FINAL SECTION --- */
 .cta-section {
     padding: 80px 5%;
-    background-color: #ff6b35;
+    background-color: var(--primary);
     text-align: center;
-}
-
-.cta-content {
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .cta-title {
     font-size: 3em;
-    color: #1a1a1a;
+    color: var(--background-dark);
     margin-bottom: 10px;
     font-weight: bold;
 }
 
-.cta-description {
+.cta-subtitle {
     font-size: 1.2em;
-    color: #1a1a1a;
+    color: var(--background-dark);
     margin-bottom: 40px;
     font-weight: 500;
 }
@@ -280,178 +228,69 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    margin-top: 20px;
-    max-width: 900px;
     margin: 20px auto 0 auto;
+    max-width: 900px;
 }
 
-.cta-image {
+.cta-image-container img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Media Queries para móviles */
+
+/* ======================================= */
+/* 📱 MEDIA QUERIES PARA RESPONSIVIDAD 📱 */
+/* ======================================= */
+
+/* Teléfonos Pequeños y Tablets (Máximo 768px) */
 @media (max-width: 768px) {
-    /* Hero section móvil */
+    /* HERO */
     .hero-section {
-        height: 80vh; /* Altura reducida en móvil */
-        padding: 20px;
+        min-height: 80vh; /* Aumentamos un poco la altura para que respire */
+        padding: 100px 5%; /* Añadimos padding superior e inferior para evitar que el contenido toque los bordes */
     }
-
+    
     .hero-content {
-        padding: 0 10px;
+        /* Aseguramos que el contenido del hero se vea bien en pantallas estrechas */
+        padding-top: 50px; /* Espacio después de la barra de navegación/logo */
     }
 
-    .hero-title {
-        font-size: 2.5em; /* Título más pequeño */
-    }
-
-    .hero-description {
-        font-size: 1.2em;
-    }
-
-    .hero-buttons {
-        flex-direction: column; /* Botones en columna */
-        gap: 15px;
-    }
-
-    .phone-button {
-        padding: 12px 20px;
-        font-size: 1em;
-    }
-
-    /* Stats grid móvil */
-    .stats-section {
-        padding: 40px 5%;
-    }
-
-    .stats-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-    }
-
-    /* Services móvil */
-    .services-section {
-        padding: 60px 5%;
-    }
-
-    .services-content {
-        padding: 0 10px;
-    }
-
-    .services-title {
-        font-size: 2.5em;
-    }
-
-    .services-description {
-        font-size: 1.1em;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr; /* Una columna en móvil */
-        gap: 20px;
-    }
-
-    /* Mission/Vision móvil */
-    .mission-vision-section {
-        padding: 60px 5%;
-    }
-
-    .mission-vision-content {
-        padding: 0 10px;
-    }
-
-    .pilares-title {
-        font-size: 2.5em;
-    }
-
-    .mission-vision-grid {
-        grid-template-columns: 1fr; /* Una columna en móvil */
-        gap: 30px;
-    }
-
-    .mission-card,
-    .vision-card {
-        padding: 30px;
-    }
-
-    .mission-title,
-    .vision-title {
-        font-size: 1.8em;
-    }
-
-    .objectives-container {
-        padding: 30px;
-    }
-
-    .objectives-title {
-        font-size: 1.8em;
-    }
-
-    /* Drivers móvil */
-    .drivers-section {
-        padding: 60px 5%;
-    }
-
-    .drivers-content {
-        padding: 0 10px;
-    }
-
-    .drivers-title {
-        font-size: 2.5em;
-    }
-
-    .drivers-description {
-        font-size: 1.1em;
-    }
-
-    .drivers-grid {
-        grid-template-columns: 1fr; /* Una columna en móvil */
-        gap: 20px;
-    }
-
-    /* CTA móvil */
-    .cta-section {
-        padding: 60px 5%;
-    }
-
-    .cta-content {
-        padding: 0 10px;
-    }
-
-    .cta-title {
-        font-size: 2.5em;
-    }
-
-    .cta-description {
-        font-size: 1.1em;
-    }
-
-    .cta-image-container {
-        margin: 20px 0 0 0;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Ajustes adicionales para pantallas muy pequeñas */
-    .hero-title {
-        font-size: 2em;
-    }
-
-    .hero-description {
-        font-size: 1em;
-    }
-
-    .services-title,
-    .pilares-title,
-    .drivers-title,
-    .cta-title {
-        font-size: 2em;
-    }
-
+    /* Placa Certificada */
     .certified-badge {
-        font-size: 0.9em;
-        padding: 8px 15px;
+        padding: 10px 25px;
+        font-size: 1em; /* Un poco más grande para mejor legibilidad */
+        margin-bottom: 25px;
+        max-width: fit-content; /* Para que no se estire si no es necesario */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-title {
+        font-size: 2.8em; /* Título grande pero legible */
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+    
+    .hero-description {
+        font-size: 1.1em; /* Descripción más fácil de leer */
+        margin-bottom: 40px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column; /* Botones apilados verticalmente */
+        gap: 15px; /* Más espacio entre botones */
+    }
+    
+    /* Botones de Teléfono y WhatsApp */
+    .phone-button, 
+    /* Esta clase debe aplicarse al CTAButton en su componente */
+    .cta-button { 
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1.1em; /* Hacemos los botones grandes para el dedo */
+        padding: 18px 20px; /* Hacemos los botones más altos */
+        border-width: 3px; /* Engrosamos el borde para el botón de llamada */
+        font-weight: bold;
     }
 }
