@@ -18,7 +18,7 @@ export const cooperativaData = {
     contact: {
         phoneFijo: "(02) 2352 880 / 2353 561",
         whatsappMovistar: "593983950288",
-        whatsappClaro:    "593989131819",
+        whatsappClaro: "593989131819",
         mapUrl: "https://maps.app.goo.gl/TZ7Rt8dwuBns4icp8",
         address: "Av. Manuel Córdova Galarza, Pomasqui, Quito.",
     },

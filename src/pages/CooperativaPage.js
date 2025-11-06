@@ -10,8 +10,8 @@ import './CooperativaPage.css';
 
 // Importa los componentes y datos
 import { cooperativaData } from '../data/data';
-import Header from '../components/Header'; // Asumo que corregiste a Header.js
-import Footer from '../components/Footer'; // Asumo que corregiste a Footer.js
+import Header from '../components/Header'; 
+import Footer from '../components/Footer'; 
 import CTAButton from '../components/CTAButton';
 import StatCard from '../components/StatCard';
 import ServiceCard from '../components/ServiceCard';
