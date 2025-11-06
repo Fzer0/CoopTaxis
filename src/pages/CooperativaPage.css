@@ -1,14 +1,14 @@
 /* src/pages/CooperativaPage.css */
 
 /* --- Variables (Definidas en JSX para dinamismo, pero se pueden usar aquí) --- */
-/*
+
 :root {
     --primary: #FFCC00; 
     --background-light: #f4f4f4;
     --background-dark: #1e1e1e;
     --grey-medium: #666;
 }
-*/
+
 
 /* --- Estilos Base Globales --- */
 .container {
@@ -33,16 +33,18 @@
     text-align: center;
 }
 
-/* --- 1. HERO SECTION --- */
+/* --- 1. HERO SECTION (Alineado a la izquierda en escritorio) --- */
 .hero-section {
     position: relative;
     height: 100vh;
     min-height: 600px;
     display: flex;
+    /* CAMBIO CLAVE 1: Volver a centrar el contenido */
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     padding: 0 5%;
-    text-align: center;
+    /* CAMBIO CLAVE 2: Volver a centrar el texto */
+    text-align: center; 
     background-size: cover;
     background-position: center;
     color: var(--background-light);
@@ -55,15 +57,16 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    margin: 0 auto;
+    /* Escritorio: Limitar el ancho y quitar margen auto */
+    max-width: 990px; 
+    margin: 0;
 }
 
 .certified-badge {
@@ -75,6 +78,9 @@
     font-weight: bold;
     margin-bottom: 20px;
     font-size: 0.9em;
+    /* CAMBIO CLAVE 4: Centrar la placa */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-title {
@@ -98,7 +104,7 @@
 .hero-buttons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; 
     gap: 20px;
 }
 
@@ -106,15 +112,16 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 12px 30px;
-    background-color: transparent;
+    padding: 18px 30px;
+    background-color: var(--background-dark);
     color: var(--background-light);
-    border: 2px solid var(--background-light);
+    border: 3px solid var(--background-light);
     border-radius: 50px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1em;
     transition: all 0.3s ease;
-    text-decoration: none; /* Asegura que el enlace no tenga subrayado */
+    text-decoration: none; 
+    box-sizing: border-box;
 }
 
 /* --- 2. STATS SECTION --- */
@@ -131,7 +138,7 @@
 }
 
 
-/* --- 3. SERVICES SECTION & 5. DRIVERS SECTION --- */
+/* --- 3. SERVICES SECTION & 5. DRIVERS SECTION (Ajuste para que encajen más tarjetas) --- */
 .services-section {
     padding: 100px 5%;
     background-color: var(--background-light);
@@ -139,9 +146,11 @@
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Cambio Clave: Mínimo de 250px permite que quepan más tarjetas en una fila */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 30px;
 }
+
 
 /* --- 4. MISSION & VISION SECTION --- */
 .mission-vision-section {
@@ -183,7 +192,7 @@
 
 .objectives-container {
     background-color: rgba(255, 255, 255, 0.08);
-    padding: 40px;
+    padding: 20px;
     border-radius: 15px;
     border-top: 5px solid var(--primary);
 }
@@ -245,52 +254,87 @@
 
 /* Teléfonos Pequeños y Tablets (Máximo 768px) */
 @media (max-width: 768px) {
-    /* HERO */
+    /* HERO: Volver a centrar en móvil */
     .hero-section {
-        min-height: 80vh; /* Aumentamos un poco la altura para que respire */
-        padding: 100px 5%; /* Añadimos padding superior e inferior para evitar que el contenido toque los bordes */
+        justify-content: center; 
+        text-align: center; 
+        min-height: 80vh; 
+        padding: 80px 5% 50px 5%; 
     }
     
     .hero-content {
-        /* Aseguramos que el contenido del hero se vea bien en pantallas estrechas */
-        padding-top: 50px; /* Espacio después de la barra de navegación/logo */
+        max-width: 90%;
+        margin: 0 auto;
+        padding-top: 50px;
     }
 
     /* Placa Certificada */
     .certified-badge {
         padding: 10px 25px;
-        font-size: 1em; /* Un poco más grande para mejor legibilidad */
+        font-size: 1em; 
         margin-bottom: 25px;
-        max-width: fit-content; /* Para que no se estire si no es necesario */
-        margin-left: auto;
+        margin-left: auto; /* Centrar de nuevo */
         margin-right: auto;
     }
 
     .hero-title {
-        font-size: 2.8em; /* Título grande pero legible */
-        line-height: 1.2;
-        margin-bottom: 15px;
+        font-size: 2.8em;
     }
     
     .hero-description {
-        font-size: 1.1em; /* Descripción más fácil de leer */
+        font-size: 1.1em;
         margin-bottom: 40px;
     }
     
     .hero-buttons {
-        flex-direction: column; /* Botones apilados verticalmente */
-        gap: 15px; /* Más espacio entre botones */
+        flex-direction: column; 
+        gap: 15px; 
+        justify-content: center; 
     }
     
     /* Botones de Teléfono y WhatsApp */
     .phone-button, 
-    /* Esta clase debe aplicarse al CTAButton en su componente */
     .cta-button { 
         width: 100%;
         box-sizing: border-box;
-        font-size: 1.1em; /* Hacemos los botones grandes para el dedo */
-        padding: 18px 20px; /* Hacemos los botones más altos */
-        border-width: 3px; /* Engrosamos el borde para el botón de llamada */
+        font-size: 1.1em;
+        padding: 18px 20px;
+        border-width: 3px;
         font-weight: bold;
+    }
+
+    /* TÍTULOS Y SUBTÍTULOS */
+    .section-title, .cta-title {
+        font-size: 2em;
+    }
+    .section-subtitle {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+
+    /* STATS (2 columnas) */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+    }
+
+    /* SERVICES GRID (Una sola columna en móvil) */
+    .services-grid {
+        display: grid;
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    
+    /* Misión y Visión Grid (1 columna) */
+    .mv-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Teléfonos muy pequeños (Máximo 480px) */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2em;
     }
 }

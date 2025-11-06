@@ -130,14 +130,6 @@ function Footer() {
           </div>
 
           {/* Columna de Redes Sociales */}
-          <div>
-            <h4 style={{ ...styles.heading, marginBottom: '30px' }}>Síguenos</h4>
-            <div style={styles.socialContainer}>
-              <SocialLink href={socialMedia.facebook} iconText="f" colors={colors} />
-              <SocialLink href={socialMedia.instagram} iconText="📷" colors={colors} />
-              <SocialLink href={socialMedia.twitter} iconText="X" colors={colors} />
-            </div>
-          </div>
         </div>
         {/* Derechos de autor */}
         <div style={styles.copyright}>

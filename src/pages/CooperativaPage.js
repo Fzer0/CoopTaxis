@@ -3,14 +3,15 @@ import React from 'react';
 import { 
   Phone, MessageCircle, Clock, Shield, MapPin, TrendingUp, Users, Award, ChevronRight 
 } from 'lucide-react';
+import localheroImageUrl from '../assets/imagen/portadataxi.jpg'; 
 
-// Importa el CSS que crearemos
+// Importa el CSS para los estilos de la página
 import './CooperativaPage.css'; 
 
 // Importa los componentes y datos
 import { cooperativaData } from '../data/data';
-import Header from '../components/Header'; // Asumo Header.js
-import Footer from '../components/Footer'; // Asumo Footer.js
+import Header from '../components/Header'; // Asumo que corregiste a Header.js
+import Footer from '../components/Footer'; // Asumo que corregiste a Footer.js
 import CTAButton from '../components/CTAButton';
 import StatCard from '../components/StatCard';
 import ServiceCard from '../components/ServiceCard';
@@ -20,14 +21,15 @@ import DriverCard from '../components/DriverCard';
 const CooperativaPage = () => {
     const data = cooperativaData;
     
-    // URL de la imagen de fondo (Cámbiala a tu ruta local si la importas)
-    const heroImageUrl = "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600";
+    // Usamos la imagen local importada
+    const heroImageUrl = localheroImageUrl;
     
     // Limpiar el teléfono fijo para el enlace 'tel:'
     const cleanPhone = data.contact.phoneFijo.replace(/[\s()/-]/g, '');
 
     return (
         <div className="cooperativa-page" style={{
+            // Definición de variables CSS para el resto de la aplicación
             '--primary': data.colors.primary,
             '--background-light': data.colors.backgroundLight,
             '--background-dark': data.colors.backgroundDark,
@@ -59,7 +61,7 @@ const CooperativaPage = () => {
                                 Llámanos: {data.contact.phoneFijo}
                             </a>
 
-                            {/* CTA Buttons */}
+                            {/* CTA Buttons - Nota: Agregué la clase 'cta-button' para responsividad */}
                             <CTAButton
                                 text="WhatsApp Claro"
                                 icon={MessageCircle}
@@ -68,14 +70,17 @@ const CooperativaPage = () => {
                                 primary
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className="cta-button"
                             />
                             <CTAButton
                                 text="WhatsApp Movistar"
                                 icon={MessageCircle}
                                 href={`https://wa.me/${data.contact.whatsappMovistar}`}
                                 large
+                                primary
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className="cta-button"
                             />
                         </div>
                     </div>
@@ -94,12 +99,33 @@ const CooperativaPage = () => {
                 {/* 3. SECCIÓN: SERVICIOS */}
                 <section className="services-section">
                     <div className="services-container container">
-                        <h2 className="section-title">Nuestros Servicios</h2>
-                        <p className="section-subtitle">Ofrecemos soluciones de transporte adaptadas a tus necesidades</p>
+                        <h2 className="section-title">Nuestra Gama de Servicios</h2>
+                        <p className="section-subtitle">Soluciones de transporte pensadas para su seguridad, comodidad y rápida atención en la zona de Pomasqui.</p>
                         <div className="services-grid">
-                            <ServiceCard title="Servicio Urbano" description="Transporte dentro de la ciudad, puerta a puerta. Disponible las 24 horas del día." icon={MapPin} index={0} />
-                            <ServiceCard title="Mensajería Express" description="Entrega de paquetes y encomiendas con seguro incluido." icon={Shield} index={2} />
-                            <ServiceCard title="Rutas Seguras" description="Viaja a cualquier parte con conductores certificados" icon={Award} index={4} />
+                            {/* Servicio 1: Urbano (Mantiene Icono MapPin) */}
+                            <ServiceCard 
+                                title="Movilización Urbana Inmediata" 
+                                description="Servicio de taxi rápido y seguro para cualquier punto dentro de Pomasqui y áreas cercanas. Le recogemos puerta a puerta, 24 horas al día." 
+                                icon={MapPin} 
+                                index={0} 
+                            />
+                            
+                            {/* Servicio 2: Mensajería (Mantiene Icono Shield) */}
+                            <ServiceCard 
+                                title="Mensajería Expresa y Confiable" 
+                                description="Gestión segura de paquetería y documentos urgentes. Sus envíos son manejados con la máxima discreción y garantía de entrega." 
+                                icon={Shield} 
+                                index={1} // Cambié el índice a 1 para mantener orden secuencial
+                            />
+                            
+                            {/* Servicio 3: Rutas (Mantiene Icono Award) */}
+                            <ServiceCard 
+                                title="Viajes Ejecutivos y Encomiendas Especiales" 
+                                description="Traslados de largo recorrido o programados con nuestra flota premium y conductores de alta experiencia para un viaje sin preocupaciones." 
+                                icon={Award} 
+                                index={2} // Cambié el índice a 2 para mantener orden secuencial
+                            />
+                            
                         </div>
                     </div>
                 </section>

@@ -23,16 +23,20 @@ export const cooperativaData = {
         address: "Av. Manuel Córdova Galarza, Pomasqui, Quito.",
     },
     
-    // --- Identidad Corporativa  ---
-    identity: {
-        mision: "Ofrecer el servicio de transporte más seguro, rápido y confiable en el todo pomasqui, basado en la calidad, la capacitación continua de nuestros socios y un compromiso total con la satisfacción del cliente.",
-        vision: "Ser la cooperativa de taxis de mayor confianza en todo el sector de Pomasqui, reconocida por nuestra rápida respuesta, la seguridad y el fuerte compromiso social con nuestra comunidad de usuarios",
-        objetivos: [
-            "Garantizar la disponibilidad del servicio 24/7, incluso en feriados.",
-            "Expandir la cobertura de nuestros servicios.",
-            "Alcanzar una calificación de 4.8/5 estrellas en satisfacción del cliente."
-        ],
-    },
+    // --- Identidad Corporativa ---
+identity: {
+    mision: "Proporcionar un servicio de transporte excepcional en Pomasqui, centrado en la seguridad total, la fiabilidad operativa y la comodidad superior de nuestros usuarios, fomentando una relación de confianza duradera.",
+    
+    vision: "Convertirnos en la cooperativa de taxis de referencia y liderazgo en el sector de Pomasqui. Buscamos ser la primera elección y la más valorada tanto por nuestra comunidad de clientes como por nuestros socios conductores.",
+    
+    objetivos: [
+        // Manteniendo los objetivos mejorados de la respuesta anterior
+        "Asegurar la total disponibilidad de nuestra flota (24 horas al día, 7 días a la semana) para atender todas las solicitudes, incluyendo días festivos y eventos especiales.",
+        "Implementar soluciones tecnológicas para expandir y optimizar la cobertura de nuestros servicios, llegando a nuevas áreas dentro del cantón.",
+        "Mantener un índice de satisfacción del cliente superior al 95%, medido a través de encuestas post-servicio y métricas de calidad.",
+        "Garantizar que el 100% de nuestros socios conductores aprueben los módulos de capacitación anual en seguridad vial y atención al cliente."
+    ],
+},
     
     // --- Políticas de la Cooperativa ---
     policies: "Nuestras políticas se centran en la seguridad del pasajero...",
@@ -63,23 +67,23 @@ export const cooperativaData = {
         subtitle: "Profesionales al volante, comprometidos con tu seguridad y comodidad.",
         drivers: [
             {
-                name: "Control de Calidad",
-                details: "Certificamos la higiene y el estado mecánico de cada taxi semanalmente, asegurando un viaje cómodo y sin fallas.",
-                photo: con1
+                    name: "Confianza",
+                details: "Ofrecemos a nuestros clientes un servicio de transporte transparente, fiable y honesto, respaldado por conductores de trayectoria.",
+                photo: con1 // Usar la variable de foto o ícono que tenías
             },
             {
-                name: "Sistema Sugerencias",
-                details: "Cada sugerencia es revisada por la Cooperativa para mejorar el servicio.",
+                name: "Seguridad",
+                details: "Garantizamos viajes protegidos, asegurando que cada cliente sea tratado con el máximo cuidado, como si fuera de nuestra familia.",
                 photo: con2 
             },
             {
-                name: "Tarifas Transparentes",
-                details: "Garantizamos el uso del taxímetro en rutas fijas, precios sin cargos ocultos ni sorpresas.",
-                photo: con5 
+                name: "Calidez",
+                details: "Nos esforzamos para que cada cliente se sienta cómodo y bienvenido, disfrutando de un ambiente acogedor desde que sube al vehículo.",
+                photo: con5 // Usar la variable de foto o ícono que tenías
             },
             {
-                name: "Objetos Perdidos",
-                details: "Recupera objetos olvidados en la oficina central de Pomasqui.",
+                name: "Eficiencia",
+                details: "Empleamos la mejor logística para que tus traslados sean rápidos y puntuales, asegurando que llegues a tu destino sin demoras innecesarias.",
                 photo: con4 
             },
         ]
