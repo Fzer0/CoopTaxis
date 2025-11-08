@@ -120,7 +120,7 @@
 }
 
 .services-section {
-    padding: 100px 5%;
+    padding: 40px 5%;
     background-color: var(--background-light);
 }
 
@@ -133,14 +133,14 @@
 
 /* --- MISSION & VISION --- */
 .mission-vision-section {
-    padding: 100px 5%;
+    padding: 40px 5%;
     background: linear-gradient(135deg, var(--background-dark) 0%, #1a1a1a 100%);
     color: var(--background-light);
 }
 
 .mv-title {
     color: var(--primary);
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 .mv-grid {
@@ -193,7 +193,7 @@
 
 /* --- CTA FINAL SECTION --- */
 .cta-section {
-    padding: 80px 5%;
+    padding: 40px 5%;
     background-color: var(--primary);
     text-align: center;
 }
@@ -272,19 +272,21 @@
         box-sizing: border-box;
         font-size: 1.1em;
         padding: 18px 20px;
-        border-width: 3px;
+        border-width: 2px;
         font-weight: bold;
     }
 
     /* TÍTULOS Y SUBTÍTULOS */
     .section-title, .cta-title {
-        font-size: 2em;
+        font-size: 1em;
     }
     .section-subtitle {
         font-size: 1em;
         margin-bottom: 40px;
     }
-
+    .services-section {
+        padding: 20px 5%; 
+    }
     /* STATS (2 columnas) */
     .stats-grid {
         grid-template-columns: repeat(2, 1fr); 
@@ -300,7 +302,7 @@
     /* Misión y Visión Grid (1 columna) */
     .mv-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
 }
 
