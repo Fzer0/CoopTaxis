@@ -44,7 +44,6 @@ function Footer() {
     hours: { 
         lineHeight: '1.8' 
     },
-    // El estilo socialContainer también fue eliminado ya que no se usaba.
     copyright: {
         borderTop: `1px solid ${colors.greyMedium}`,
         paddingTop: '20px',

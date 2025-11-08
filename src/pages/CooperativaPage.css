@@ -109,13 +109,13 @@
 
 .stats-section {
     background-color: var(--background-dark);
-    padding: 60px 5%;
+    padding: 50px 5%;
     border-top: 3px solid var(--primary);
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
 }
 
@@ -128,8 +128,72 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 30px;
+    margin-top: 20px;
 }
 
+/* Caption para la foto del equipo */
+.driver-photo-caption {
+    text-align: center;
+    margin-top: 25px;
+    padding: 0 15px;
+}
+
+.driver-photo-caption h3 {
+    font-size: 1.5em;
+    color: var(--background-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.driver-photo-caption p {
+    font-size: 1.05em;
+    color: var(--grey-medium);
+    line-height: 1.6;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Badge decorativo sobre la imagen */
+.photo-badge {
+    position: absolute;
+    top: -20px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--primary) 0%, #d4af37 100%);
+    color: var(--background-dark);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95em;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.driver-photo-middle {
+    max-width: 900px;
+    margin: 40px auto; 
+    text-align: center;
+    padding: 0 15px; 
+    box-sizing: border-box; 
+}
+
+.driver-photo-middle img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+}
+
+.driver-photo-middle:hover::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
 
 /* --- MISSION & VISION --- */
 .mission-vision-section {
@@ -217,7 +281,7 @@
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     margin: 20px auto 0 auto;
-    max-width: 900px;
+    max-width: 950px;
 }
 
 .cta-image-container img {

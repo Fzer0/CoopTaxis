@@ -11,7 +11,7 @@ const DriverCard = ({ driver }) => {
       backgroundImage: `url(${driver.photo})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      height: '350px',
+      height: 'auto',
       borderRadius: '10px 10px 0 0',
       filter: 'brightness(85%)',
     },

@@ -1,8 +1,5 @@
-import con1 from '../assets/imagen/con1.jpeg';
-import con2 from '../assets/imagen/con2.jpeg';
-import con4 from '../assets/imagen/con4.jpeg';
-import con5 from '../assets/imagen/con5.jpeg';
 import photoEquipo from '../assets/imagen/equipo.jpeg';
+import photoEquipoFlota from '../assets/imagen/equipo2.jpeg';
 
 // Datos de la cooperativa de taxis
 export const cooperativaData = {
@@ -52,6 +49,7 @@ export const cooperativaData = {
     // Fotos del Equipo
     photos: [
         { name: 'Equipo', url: photoEquipo }, 
+        { name: 'Equipo Flota', url: photoEquipoFlota },
     ],
 
     // --- Fotos de Conductores ---
@@ -62,22 +60,18 @@ export const cooperativaData = {
             {
                     name: "Confianza",
                 details: "Ofrecemos a nuestros clientes un servicio de transporte transparente, fiable y honesto, respaldado por conductores de trayectoria.",
-                photo: con1
             },
             {
                 name: "Seguridad",
                 details: "Garantizamos viajes protegidos, asegurando que cada cliente sea tratado con el máximo cuidado, como si fuera de nuestra familia.",
-                photo: con2 
             },
             {
                 name: "Calidez",
                 details: "Nos esforzamos para que cada cliente se sienta cómodo y bienvenido, disfrutando de un ambiente acogedor desde que sube al vehículo.",
-                photo: con5
             },
             {
                 name: "Eficiencia",
                 details: "Empleamos la mejor logística para que tus traslados sean rápidos y puntuales, asegurando que llegues a tu destino sin demoras innecesarias.",
-                photo: con4 
             },
         ]
     }

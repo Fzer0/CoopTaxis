@@ -16,6 +16,7 @@ const CooperativaPage = () => {
     const data = cooperativaData;
     const heroImageUrl = nuevoFondoHero;
     const cleanPhone = data.contact.phoneFijo.replace(/[\s()/-]/g, '');
+    const photoEquipoFlota = data.photos.find(p => p.name === 'Equipo Flota');
 
     return (
         <div className="cooperativa-page" style={{
@@ -151,12 +152,25 @@ const CooperativaPage = () => {
                 </section>
 
                 {/* SECCIÓN: CONDUCTORES Y DATOS */}
-                <section className="services-section">
+                <section className="services-section driver-info-section">
                     <div className="services-container container">
                         <h2 className="section-title">{data.driverInfo.title}</h2>
                         <p className="section-subtitle">{data.driverInfo.subtitle}</p>
-                        <div className="services-grid">
-                            {/* Mapea los datos de los conductores */}
+                        {photoEquipoFlota && (
+                            <div className="driver-photo-middle">
+                                {/* Badge decorativo */}
+                                <div className="photo-badge">
+                                    <Award size={18} />
+                                    Equipo Certificado
+                                </div>
+                                <img
+                                    src={photoEquipoFlota.url}
+                                    alt="Equipo"
+                                />
+                            </div>
+                        )} 
+                        {/* Grid de tarjetas de conductores */}
+                        <div className="services-grid" style={{ marginTop: '60px' }}>
                             {data.driverInfo.drivers.map((driver, index) => (
                                 <DriverCard key={index} driver={driver} />
                             ))}
