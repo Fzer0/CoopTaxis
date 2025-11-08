@@ -1,8 +1,6 @@
-// src/components/StatCard.js
 import React from 'react';
 import { cooperativaData } from '../data/data';
 
-// --- Objetos de Estilo ---
 const styles = (colors) => ({
   card: { 
     textAlign: 'center', 
@@ -23,7 +21,6 @@ const styles = (colors) => ({
   }
 });
 
-// Componente Estadística
 const StatCard = ({ number, label, icon: Icon }) => {
   const data = cooperativaData;
   const currentStyles = styles(data.colors);

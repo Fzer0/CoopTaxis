@@ -2,12 +2,11 @@
 import React, { useState } from 'react';
 import { cooperativaData } from '../data/data';
 
-// --- Objetos de Estilo ---
+// Objetos de Estilo
 const getButtonStyle = (data, primary, large, isHovered) => ({
   display: 'inline-flex',
   alignItems: 'center',
   gap: '10px',
-  // Lógica de tamaño
   padding: large ? '18px 40px' : '12px 30px',
   // Lógica de color
   backgroundColor: primary ? data.colors.primary : data.colors.backgroundDark,
@@ -17,7 +16,7 @@ const getButtonStyle = (data, primary, large, isHovered) => ({
   fontWeight: 'bold',
   fontSize: large ? '1.2em' : '1em',
   transition: 'all 0.3s ease',
-  // Lógica de Hover
+  // Efectos hover
   transform: isHovered ? 'translateY(-3px)' : 'translateY(0)',
   boxShadow: isHovered 
     ? '0 10px 30px rgba(255, 200, 5, 0.3)' 
@@ -25,7 +24,7 @@ const getButtonStyle = (data, primary, large, isHovered) => ({
   border: primary ? 'none' : `2px solid ${data.colors.primary}`,
 });
 
-// Componente Botón CTA
+// Componente CTAButton
 const CTAButton = ({ text, icon: Icon, primary, href, large, target, rel }) => { 
   const [isHovered, setIsHovered] = useState(false);
   const data = cooperativaData;
@@ -39,7 +38,7 @@ const CTAButton = ({ text, icon: Icon, primary, href, large, target, rel }) => {
       rel={rel}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={style} // Aplicación del estilo limpio
+      style={style} 
     >
       {Icon && <Icon size={20} />}
       {text}

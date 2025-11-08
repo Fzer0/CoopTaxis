@@ -1,8 +1,7 @@
-// src/components/ServiceCard.js
 import React, { useState, useEffect } from 'react';
 import { cooperativaData } from '../data/data';
 
-// --- Estilos Base para la Tarjeta ---
+// Estilos dinámicos para la tarjeta de servicio
 const getCardStyle = (data, isVisible, isHovered) => ({
   backgroundColor: 'white',
   padding: '40px 30px',
@@ -13,7 +12,6 @@ const getCardStyle = (data, isVisible, isHovered) => ({
   flexDirection: 'column',
   alignItems: 'center',
   textAlign: 'center',
-  // Transiciones y animaciones de entrada/hover
   transition: 'all 0.5s ease',
   opacity: isVisible ? 1 : 0,
   transform: isVisible && !isHovered ? 'translateY(0)' : 
@@ -26,7 +24,7 @@ const getCardStyle = (data, isVisible, isHovered) => ({
     : `2px solid ${data.colors.backgroundLight}`,
 });
 
-// Estilos de los elementos internos
+// Estilos internos
 const innerStyles = (colors) => ({
   iconWrapper: {
     width: '70px',
@@ -51,15 +49,12 @@ const innerStyles = (colors) => ({
   }
 });
 
-
-// Componente Tarjeta de Servicio
 const ServiceCard = ({ title, description, icon: Icon, index }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const data = cooperativaData;
 
   useEffect(() => {
-    // Animación de entrada con retardo
     const timer = setTimeout(() => setIsVisible(true), index * 150);
     return () => clearTimeout(timer);
   }, [index]);

@@ -1,14 +1,8 @@
-// src/pages/CooperativaPage.js
 import React from 'react';
 import { 
   Phone, MessageCircle, Clock, Shield, MapPin, TrendingUp, Users, Award, ChevronRight 
 } from 'lucide-react';
-import localheroImageUrl from '../assets/imagen/portadataxi.jpg'; 
-
-// Importa el CSS para los estilos de la página
 import './CooperativaPage.css'; 
-
-// Importa los componentes y datos
 import { cooperativaData } from '../data/data';
 import Header from '../components/Header'; 
 import Footer from '../components/Footer'; 
@@ -16,20 +10,16 @@ import CTAButton from '../components/CTAButton';
 import StatCard from '../components/StatCard';
 import ServiceCard from '../components/ServiceCard';
 import DriverCard from '../components/DriverCard';
-
+import nuevoFondoHero from '../assets/imagen/fondo.jpeg';
 
 const CooperativaPage = () => {
     const data = cooperativaData;
-    
-    // Usamos la imagen local importada
-    const heroImageUrl = localheroImageUrl;
-    
-    // Limpiar el teléfono fijo para el enlace 'tel:'
+    const heroImageUrl = nuevoFondoHero;
     const cleanPhone = data.contact.phoneFijo.replace(/[\s()/-]/g, '');
 
     return (
         <div className="cooperativa-page" style={{
-            // Definición de variables CSS para el resto de la aplicación
+            // variables CSS para el diseno de la página
             '--primary': data.colors.primary,
             '--background-light': data.colors.backgroundLight,
             '--background-dark': data.colors.backgroundDark,
@@ -37,7 +27,7 @@ const CooperativaPage = () => {
         }}>
             <Header />
             <main>
-                {/* 1. Sección Hero */}
+                {/* Sección Hero */}
                 <section className="hero-section" style={{ 
                     backgroundImage: `url(${heroImageUrl})` 
                 }}>
@@ -61,7 +51,6 @@ const CooperativaPage = () => {
                                 Llámanos: {data.contact.phoneFijo}
                             </a>
 
-                            {/* CTA Buttons - Nota: Agregué la clase 'cta-button' para responsividad */}
                             <CTAButton
                                 text="WhatsApp Claro"
                                 icon={MessageCircle}
@@ -86,51 +75,50 @@ const CooperativaPage = () => {
                     </div>
                 </section>
 
-                {/* 2. SECCIÓN: ESTADÍSTICAS */}
+                {/* SECCIÓN: ESTADISTICAS */}
                 <section className="stats-section">
                     <div className="stats-grid container">
                         <StatCard number="24/7" label="Disponibilidad" icon={Clock} />
                         <StatCard number="50+" label="Viajes Diarios" icon={TrendingUp} />
                         <StatCard number="100%" label="Certificados" icon={Award} />
-                        <StatCard number="10+" label="Años de Experiencia" icon={Users} />
+                        <StatCard number="33+" label="Años de Experiencia" icon={Users} />
                     </div>
                 </section>
 
-                {/* 3. SECCIÓN: SERVICIOS */}
+                {/* SECCIÓN: SERVICIOS */}
                 <section className="services-section">
                     <div className="services-container container">
                         <h2 className="section-title">Nuestra Gama de Servicios</h2>
-                        <p className="section-subtitle">Soluciones de transporte pensadas para su seguridad, comodidad y rápida atención en la zona de Pomasqui.</p>
+                        <p className="section-subtitle">Soluciones de transporte pensando en su seguridad, comodidad y rapidez, servicio dentro y fuera de la ciudad</p>
                         <div className="services-grid">
-                            {/* Servicio 1: Urbano (Mantiene Icono MapPin) */}
+                            {/* Servicio Inmediato */}
                             <ServiceCard 
-                                title="Movilización Urbana Inmediata" 
-                                description="Servicio de taxi rápido y seguro para cualquier punto dentro de Pomasqui y áreas cercanas. Le recogemos puerta a puerta, 24 horas al día." 
+                                title="Movilización Inmediata" 
+                                description="Nuestros servicios 24 horas, puerta a puerta viajes ✈️ tours programados, dentro y fuera de la ciudad" 
                                 icon={MapPin} 
                                 index={0} 
                             />
                             
-                            {/* Servicio 2: Mensajería (Mantiene Icono Shield) */}
+                            {/* Servicio Mensajería */}
                             <ServiceCard 
                                 title="Mensajería Expresa y Confiable" 
                                 description="Gestión segura de paquetería y documentos urgentes. Sus envíos son manejados con la máxima discreción y garantía de entrega." 
                                 icon={Shield} 
-                                index={1} // Cambié el índice a 1 para mantener orden secuencial
+                                index={1} 
                             />
                             
-                            {/* Servicio 3: Rutas (Mantiene Icono Award) */}
+                            {/* Servicio Rutas */}
                             <ServiceCard 
                                 title="Viajes Ejecutivos y Encomiendas Especiales" 
                                 description="Traslados de largo recorrido o programados con nuestra flota premium y conductores de alta experiencia para un viaje sin preocupaciones." 
                                 icon={Award} 
-                                index={2} // Cambié el índice a 2 para mantener orden secuencial
-                            />
-                            
+                                index={2}
+                            />                            
                         </div>
                     </div>
                 </section>
 
-                {/* 4. SECCIÓN: MISIÓN Y VISIÓN */}
+                {/* SECCIÓN: MISIÓN Y VISIÓN */}
                 <section className="mission-vision-section">
                     <div className="container">
                         <h2 className="mv-title section-title">Nuestros Pilares</h2>
@@ -162,7 +150,7 @@ const CooperativaPage = () => {
                     </div>
                 </section>
 
-                {/* 5. SECCIÓN: CONDUCTORES Y FLOTA */}
+                {/* SECCIÓN: CONDUCTORES Y DATOS */}
                 <section className="services-section">
                     <div className="services-container container">
                         <h2 className="section-title">{data.driverInfo.title}</h2>
@@ -176,13 +164,13 @@ const CooperativaPage = () => {
                     </div>
                 </section>
                 
-                {/* 6. SECCIÓN: CTA FINAL */}
+                {/* SECCIÓN: CTA FINAL */}
                 <section className="cta-section">
                     <div className="container">
                         <h2 className="cta-title">¿Listo para tu próximo viaje?</h2>
                         <p className="cta-subtitle">Contáctanos ahora y reserva tu taxi en segundos:</p>
 
-                        {/* Contenedor para la imagen */}
+                        {/* Contenedor para la imagen del equipo*/}
                         <div className="cta-image-container">
                             <img
                                 src={data.photos.find(p => p.name === 'Equipo').url}

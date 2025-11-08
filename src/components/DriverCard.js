@@ -1,4 +1,3 @@
-// src/components/DriverCard.js
 import React from 'react';
 import { Shield } from 'lucide-react'; 
 import { cooperativaData } from '../data/data';
@@ -6,9 +5,8 @@ import { cooperativaData } from '../data/data';
 const DriverCard = ({ driver }) => {
   const data = cooperativaData;
 
-  // --- Objetos de Estilo ---
+  // Objetos de Estilo
   const styles = {
-    // Estilo de la imagen de fondo
     image: {
       backgroundImage: `url(${driver.photo})`,
       backgroundSize: 'cover',
@@ -17,7 +15,7 @@ const DriverCard = ({ driver }) => {
       borderRadius: '10px 10px 0 0',
       filter: 'brightness(85%)',
     },
-    // Estilo principal de la tarjeta (base)
+    // Estilo principal de la tarjeta
     card: {
       backgroundColor: 'white',
       borderRadius: '10px',
