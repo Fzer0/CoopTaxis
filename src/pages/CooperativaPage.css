@@ -153,24 +153,6 @@
     margin: 0 auto;
 }
 
-/* Badge decorativo sobre la imagen */
-.photo-badge {
-    position: absolute;
-    top: -20px;
-    right: 30px;
-    background: linear-gradient(135deg, var(--primary) 0%, #d4af37 100%);
-    color: var(--background-dark);
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.95em;
-    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-    z-index: 10;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
 .driver-photo-middle {
     max-width: 900px;
     margin: 40px auto; 

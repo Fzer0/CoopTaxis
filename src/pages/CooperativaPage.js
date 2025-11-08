@@ -158,11 +158,6 @@ const CooperativaPage = () => {
                         <p className="section-subtitle">{data.driverInfo.subtitle}</p>
                         {photoEquipoFlota && (
                             <div className="driver-photo-middle">
-                                {/* Badge decorativo */}
-                                <div className="photo-badge">
-                                    <Award size={18} />
-                                    Equipo Certificado
-                                </div>
                                 <img
                                     src={photoEquipoFlota.url}
                                     alt="Equipo"

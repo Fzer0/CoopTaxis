@@ -104,6 +104,7 @@ function Footer() {
         {/* Derechos de autor */}
         <div style={styles.copyright}>
         <p>© {new Date().getFullYear()} {name}. Todos los derechos reservados.</p>
+        <p className="location">QUITO - ECUADOR </p>
         </div>
     </div>
     </footer>
